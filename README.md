@@ -1,20 +1,48 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Tiny Glow Spider Project - Moheuddin.Terminal
 
-# Run and deploy your AI Studio app
+এই ডকুমেন্টেশনে আপনার পোর্টফোলিও বা প্রজেক্টের জন্য তৈরি করা **Tiny Glow Spider** (রিয়েলিস্টিক মাকড়সা) ইফেক্টটি সম্পর্কে বিস্তারিত আলোচনা করা হয়েছে।
 
-This contains everything you need to run your app locally.
+## ১. প্রজেক্টের বৈশিষ্ট্য (Key Features)
 
-View your app in AI Studio: https://ai.studio/apps/06d4850d-6d56-4691-97c9-f4cbefea43da
+* **Hyper-Realistic Motion:** ৮টি পায়ের জন্য আলাদা `Jointed Animation` যা সত্যিকারের মাকড়সার হাঁটার অনুভূতি দেয়।
+* **Tiny & Stealthy:** মাকড়সাটি আকারে ছোট করা হয়েছে যাতে এটি ইন্টারফেসের মূল কন্টেন্টকে বাধা না দিয়ে একটি রহস্যময় আবহ তৈরি করে।
+* **Dynamic Torch Light:** মাকড়সাটি যেখানে থাকবে তার চারপাশে একটি গোল্ডেন `Radial Glow` বা লাইট ইফেক্ট থাকবে।
+* **Aggressive Interaction:** মাউস কার্সার মাকড়সার মাথার কাছে এলে এটি ক্ষিপ্ত হয়ে ওঠে (আগুন ও ধোঁয়া বের করে)।
+* **Zero Image Dependency:** এটি পুরোপুরি SVG এবং কোড দিয়ে তৈরি, ফলে কোনো বাহ্যিক ছবির প্রয়োজন নেই এবং এটি অত্যন্ত দ্রুত লোড হয়।
 
-## Run Locally
+## ২. প্রযুক্তিগত বিবরণ (Technical Stack)
 
-**Prerequisites:**  Node.js
+* **Framework:** React.js
+* **Animation Library:** Framer Motion (`framer-motion`)
+* **Styling:** Tailwind CSS (for positioning)
+* **Graphics:** Dynamic SVG (Scalable Vector Graphics)
 
+## ৩. কোড স্ট্রাকচার (Code Structure)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### এনিমেশন লজিক
+`useSpring` এবং `useMotionValue` ব্যবহার করা হয়েছে মাউসের মুভমেন্টকে মসৃণ করার জন্য। সাধারণ পিক্সেল ফলো করার চেয়ে এটি অনেক বেশি "প্রাকৃতিক" মনে হয়।
+
+### লাইটিং ইফেক্ট
+`radial-gradient(circle, rgba(255,200,100,0.15) 0%, transparent 70%)` ব্যবহার করে মাকড়সার নিচে একটি হালকা টর্চ লাইট ইফেক্ট তৈরি করা হয়েছে।
+
+## ৪. ইন্সটলেশন গাইড (Installation)
+
+আপনার প্রজেক্টে এটি ব্যবহার করতে নিচের ধাপগুলো অনুসরণ করুন:
+
+1.  **লাইব্রেরি ইনস্টল করুন:**
+    ```bash
+    npm install framer-motion
+    ```
+
+2.  **কম্পোনেন্টটি ইমপোর্ট করুন:**
+    আপনার `App.js` বা যে কোনো পেজে `TinyGlowSpider` ফাইলটি ইমপোর্ট করে রেন্ডার করুন।
+
+## ৫. কাস্টমাইজেশন টিপস
+
+* **রঙ পরিবর্তন:** `spiderBody` গ্রেডিয়েন্টে আপনার ব্র্যান্ডের রঙ ব্যবহার করতে পারেন।
+* **আকার পরিবর্তন:** `w-16 h-16` ক্লাস পরিবর্তন করে মাকড়সার আকার ছোট-বড় করা সম্ভব।
+* **লাইটের তীব্রতা:** `opacity` বাড়িয়ে বা কমিয়ে লাইট ইফেক্টকে আরও উজ্জ্বল করা যায়।
+
+---
+**Prepared by:** Gemini AI
+**For:** Moheuddin Al Usama (Web Developer)
